@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Wishes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Приветственная страница -->
+    <div id="welcomeScreen" class="welcome-screen">
+        <h1> </h1>
+        
+        <!-- Изображение Рона Уизли -->
+        <div class="ron-container">
+            <img src="ron.png" alt="Рон Уизли" id="ronImage">
+        </div>
+        
+        <!-- Кнопка включения звука -->
+        <button id="startButton" class="glow-on-hover">Klick mich</button>
+    </div>
+
+    <!-- Основная страница (скрыта по умолчанию) -->
+    <div id="mainContent" class="hidden">
+        <h1>Alles Gute zum Geburtstag, Yasya!</h1>
+        <h2>Wünsch dir was und blas die Kerzen aus!</h2>
+        <canvas id="birthdayCanvas"></canvas>
+        <audio id="birthdayAudio" src="Claus Van Houten - Happy Birthday to You.mp3" autoplay loop></audio>
+        <audio id="joySound" src="joySound.mp3"></audio> <!-- Второй аудиофайл -->
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

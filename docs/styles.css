@@ -1,0 +1,120 @@
+/* Основные стили */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #101010;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-family: 'HarryPotter', Arial, sans-serif;
+}
+
+h1, h2 {
+    margin: 10px;
+}
+
+canvas {
+    background-color: #333;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Приветственный экран */
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #101010;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    text-align: center;
+}
+
+.hidden {
+    display: none; /* Скрывает основной контент до нажатия кнопки */
+}
+
+/* Кнопка glow-on-hover */
+.glow-on-hover {
+    width: 220px;
+    height: 60px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'HarryPotter', Arial, sans-serif;
+    text-transform: uppercase;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Анимация для кнопки */
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* Подключение шрифта */
+@font-face {
+    font-family: 'HarryPotter';
+    src: url('fonts/Handwritten_Institute.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Стили для Рона Уизли */
+/* Стили для Рона Уизли */
+.ron-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Сдвигаем Рона вниз */
+    margin-left: -140px;
+}
+
+#ronImage {
+    width: 200px; /* Установите нужный размер */
+    position: absolute;
+    top: 85%; /* Настройте по вертикали */
+    left: 40%; /* Сдвигаем изображение левее по горизонтали */
+    transform: translate(-50%, -50%); /* Центрирует изображение относительно кнопки */
+    z-index: 1; /* Обеспечивает перекрытие кнопки */
+}
+
+#startButton {
+    z-index: 0; /* Кнопка будет под изображением */
+}
